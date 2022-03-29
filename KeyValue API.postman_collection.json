@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "b6d4b8c1-582f-429f-b2fb-a18785b18b74",
+		"name": "KeyValue API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get KeyValue",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mykey\": \"value1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/keyvalue/object/mykey",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keyvalue",
+						"object",
+						"mykey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get KeyValue Timestamp",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mykey\": \"value1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/keyvalue/object/mykey?timestamp=1648523687699",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keyvalue",
+						"object",
+						"mykey"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "1648523687699"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create KeyValue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"mykey\": \"value1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/keyvalue/object",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"keyvalue",
+						"object"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
