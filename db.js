@@ -12,7 +12,7 @@ db.serialize(() => {
     db.run(sql);
 });
 
-// KeyValues API - database operation
+// KeyValues API - db operation
 class KeyValues {
     static all(cb) {
         db.all('SELECT * FROM keyvalues', cb);
@@ -44,14 +44,17 @@ class KeyValues {
         }
     }
 
-    // :todo
+    static check(key, value, cb) {
+        db.get('SELECT value FROM keyvalues WHERE key = ? AND value = ? ORDER BY timestamp DESC', key, value, cb);
+    }
+
     static update(data, cb) {
         const sql = `
             UPDATE keyvalues
-            SET key=?
-            WHERE id=?
+            SET timestamp=?
+            WHERE key=? AND value=?
         `
-        db.run(sql, data.key, data.id, cb)
+        db.run(sql, data.timestamp, data.key, data.value, cb)
     }
 }
 
